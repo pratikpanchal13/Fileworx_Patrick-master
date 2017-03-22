@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import MMDrawerController
 
 class HomeVC: UIViewController {
 
     // Variable & Outlets
     
-    @IBOutlet weak var btnBack: UIButton!
+    @IBOutlet weak var btnSideMenu: UIButton!
+   
     @IBOutlet weak var containerView: UIView!
     
     @IBOutlet weak var lblTitleVC: UILabel!
@@ -26,6 +28,8 @@ class HomeVC: UIViewController {
         let data =  UtilityUserDefault().getUDObject(KeyToReturnValye: "user")
         let data1 =  UtilityUserDefault().getUDBool(key: "pratik")
 
+        self.navigationController?.isNavigationBarHidden = true
+
         
         print("My Data is \((data)!)")
         print("My Data is \(data1)")
@@ -36,6 +40,15 @@ class HomeVC: UIViewController {
     }
     
   
+    @IBAction func btnSideMenuClicked(_ sender: Any) {
+
+        
+//        FWUtilityDrawer().centerContainer!.toggle(MMDrawerSide.right, animated: true, completion: nil)
+        self.view.endEditing(true)
+        self.mm_drawerController?.toggle(.right, animated: true, completion: nil)
+
+
+    }
     
 }
 
@@ -99,10 +112,7 @@ extension HomeVC{
 
     // MARK : - Button Clicked Event
     
-    @IBAction func btnBackClicked(_ sender: Any) {
-        
-        let _ = self.navigationController?.popViewController(animated: true)
-    }
+   
     @IBAction func btnHomeClicked(_ sender: Any) {
         
         lblTitleVC.text = "Messages"

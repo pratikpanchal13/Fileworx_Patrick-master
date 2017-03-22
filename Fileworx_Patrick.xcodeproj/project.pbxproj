@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		4768F6CA3B44505DBE417851 /* Pods_Fileworx_Patrick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26D65A9ABB6C9D704BC16EEE /* Pods_Fileworx_Patrick.framework */; };
+		A90DBDD51E8285EA00E532D0 /* FWLeftSideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90DBDD41E8285EA00E532D0 /* FWLeftSideMenu.swift */; };
+		A90DBDD81E82867100E532D0 /* FWLeftSideMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90DBDD71E82867100E532D0 /* FWLeftSideMenuCell.swift */; };
+		A90DBDDA1E82876A00E532D0 /* FWUtilityDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90DBDD91E82876A00E532D0 /* FWUtilityDrawer.swift */; };
 		A933E86C1E5FFE8F00B5D18F /* FWContents.swift in Sources */ = {isa = PBXBuildFile; fileRef = A933E8671E5FFE8F00B5D18F /* FWContents.swift */; };
 		A933E86D1E5FFE8F00B5D18F /* FWData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A933E8681E5FFE8F00B5D18F /* FWData.swift */; };
 		A933E86E1E5FFE8F00B5D18F /* FWDateOptionsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A933E8691E5FFE8F00B5D18F /* FWDateOptionsList.swift */; };
@@ -61,6 +64,9 @@
 
 /* Begin PBXFileReference section */
 		26D65A9ABB6C9D704BC16EEE /* Pods_Fileworx_Patrick.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fileworx_Patrick.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A90DBDD41E8285EA00E532D0 /* FWLeftSideMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FWLeftSideMenu.swift; sourceTree = "<group>"; };
+		A90DBDD71E82867100E532D0 /* FWLeftSideMenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FWLeftSideMenuCell.swift; sourceTree = "<group>"; };
+		A90DBDD91E82876A00E532D0 /* FWUtilityDrawer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FWUtilityDrawer.swift; sourceTree = "<group>"; };
 		A933E8671E5FFE8F00B5D18F /* FWContents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FWContents.swift; sourceTree = "<group>"; };
 		A933E8681E5FFE8F00B5D18F /* FWData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FWData.swift; sourceTree = "<group>"; };
 		A933E8691E5FFE8F00B5D18F /* FWDateOptionsList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FWDateOptionsList.swift; sourceTree = "<group>"; };
@@ -136,6 +142,23 @@
 				26D65A9ABB6C9D704BC16EEE /* Pods_Fileworx_Patrick.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A90DBDD31E8285C700E532D0 /* SideMenuVC */ = {
+			isa = PBXGroup;
+			children = (
+				A90DBDD61E82864D00E532D0 /* FWLeftSideMenuCell */,
+				A90DBDD41E8285EA00E532D0 /* FWLeftSideMenu.swift */,
+			);
+			path = SideMenuVC;
+			sourceTree = "<group>";
+		};
+		A90DBDD61E82864D00E532D0 /* FWLeftSideMenuCell */ = {
+			isa = PBXGroup;
+			children = (
+				A90DBDD71E82867100E532D0 /* FWLeftSideMenuCell.swift */,
+			);
+			path = FWLeftSideMenuCell;
 			sourceTree = "<group>";
 		};
 		A933E8661E5FFE6E00B5D18F /* FWMessageModule */ = {
@@ -233,6 +256,7 @@
 			children = (
 				A99C71AF1E3B65BE005B8C38 /* FWUtilityUserDefault.swift */,
 				A99C71B11E3B664C005B8C38 /* FWLanguageUitility.swift */,
+				A90DBDD91E82876A00E532D0 /* FWUtilityDrawer.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -275,6 +299,7 @@
 		A9AC35E31E1B736C0053B560 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				A90DBDD31E8285C700E532D0 /* SideMenuVC */,
 				A988A9E51E1CC591009F4729 /* MediaVC */,
 				A988A9E21E1CC550009F4729 /* MessageVC */,
 				A95607C41E1B815B00BE25C7 /* HomeVC */,
@@ -578,6 +603,8 @@
 				A9AC35EC1E1B73CA0053B560 /* AppDelegate.swift in Sources */,
 				A988A9E71E1CC59B009F4729 /* MediaVC.swift in Sources */,
 				A933E86E1E5FFE8F00B5D18F /* FWDateOptionsList.swift in Sources */,
+				A90DBDD51E8285EA00E532D0 /* FWLeftSideMenu.swift in Sources */,
+				A90DBDDA1E82876A00E532D0 /* FWUtilityDrawer.swift in Sources */,
 				A9924A041E38A30D0085924B /* FWAvailableModules.swift in Sources */,
 				A933E86F1E5FFE8F00B5D18F /* FWMessage.swift in Sources */,
 				A99C71A21E3B43C5005B8C38 /* FWAPIConstant.swift in Sources */,
@@ -587,6 +614,7 @@
 				A99249FE1E38A2830085924B /* FWMobileSettingModel.swift in Sources */,
 				A933E8741E600C6300B5D18F /* FWMessageListCell.swift in Sources */,
 				A99C71B01E3B65BE005B8C38 /* FWUtilityUserDefault.swift in Sources */,
+				A90DBDD81E82867100E532D0 /* FWLeftSideMenuCell.swift in Sources */,
 				A988A9E41E1CC57C009F4729 /* MessageVC.swift in Sources */,
 				A95607C61E1B818800BE25C7 /* HomeVC.swift in Sources */,
 				A9AC35F31E1B746C0053B560 /* FWLoginVC.swift in Sources */,

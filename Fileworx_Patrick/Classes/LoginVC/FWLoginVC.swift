@@ -40,6 +40,9 @@ class FWLoginVC: UIViewController {
         self.txtUserName.text = "root"
         self.txtPassword.text = "root"
         
+        self.navigationController?.isNavigationBarHidden = true
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -100,7 +103,7 @@ extension FWLoginVC{
     
     func CallAPILogin(){
         
-        let json: [String: Any] = ["userName": self.txtUserName.text!, "Password":self.txtPassword.text!,"LastLoginLanguageID":"-1","AuthenticationType":"0"];
+        let json: [String: Any] = ["userName": self.txtUserName.text!, "Password":self.txtPassword.text!,"LastLoginLanguageID":"2","AuthenticationType":"0"];
     
         
         WebService().callWebServiceWithURLSession(loginAPIUrl, param: json) { json
@@ -119,8 +122,10 @@ extension FWLoginVC{
                 UtilityUserDefault().setUDObject(ObjectToSave: self.objUserModel?.message as AnyObject?, KeyToSave: "user")
                 UtilityUserDefault().setUDBool(true,key: "pratik")
 
-                let controller = Constants.Storyboard.kLoginAndSplashStoryboard.instantiateViewController(withIdentifier: "HomeVC") as! HomeVC
-                self.navigationController?.pushViewController(controller, animated: true)
+                FWUtilityDrawer().loginToDrawerFrom(self, animated: false)
+
+//                let controller = Constants.Storyboard.kLoginAndSplashStoryboard.instantiateViewController(withIdentifier: "HomeVC") as! HomeVC
+//                self.navigationController?.pushViewController(controller, animated: true)
                 
             }else
             {
