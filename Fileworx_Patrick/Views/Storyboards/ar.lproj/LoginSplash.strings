@@ -1,0 +1,12 @@
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Aoo-iN-uNs"; */
+"Aoo-iN-uNs.text" = "Label";
+
+/* Class = "UIViewController"; title = "Login WAM"; ObjectID = "FPD-4G-buT"; */
+"FPD-4G-buT.title" = "Login WAM";
+
+/* Class = "UIButton"; normalTitle = "Login"; ObjectID = "b6d-ZJ-iKL"; */
+"b6d-ZJ-iKL.normalTitle" = "Login";
+
+/* Class = "UILabel"; text = "Home"; ObjectID = "gdK-LA-ULA"; */
+"gdK-LA-ULA.text" = "Home";
