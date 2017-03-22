@@ -9,6 +9,20 @@
 import UIKit
 import MMDrawerController
 
+enum HomePage :String {
+    case Message
+    case Media
+
+}
+
+enum Movement {
+    case Left
+    case Right
+    case Top
+    case Bottom
+}
+
+
 class HomeVC: UIViewController {
 
     // Variable & Outlets
@@ -25,6 +39,8 @@ class HomeVC: UIViewController {
         
         super.viewDidLoad()
 
+        NotificationCenter.default.addObserver(self, selector: #selector(setHomePage), name: NSNotification.Name(rawValue: "notifyHomePage"), object: nil)
+
         let data =  UtilityUserDefault().getUDObject(KeyToReturnValye: "user")
         let data1 =  UtilityUserDefault().getUDBool(key: "pratik")
 
@@ -39,6 +55,23 @@ class HomeVC: UIViewController {
         self.iniatLoadView()   // For Initail Load View Controller
     }
     
+    func setHomePage(notification : NSNotification )
+    {
+        let notifyHomePage  = notification.object as! String
+        print("Set Home Page\(notifyHomePage)")
+    
+        if notifyHomePage == "MessageVC" {
+            self.btnHomeClicked(Any.self)
+        }
+        if notifyHomePage == "MediaVC"
+        {
+            self.btnSendClicked(Any.self)
+        }
+        
+    
+        
+    }
+
   
     @IBAction func btnSideMenuClicked(_ sender: Any) {
 
@@ -120,6 +153,8 @@ extension HomeVC{
         newViewController.view.translatesAutoresizingMaskIntoConstraints = false
         self.cycleFromViewController(self.currentViewController!, toViewController: newViewController)
         self.currentViewController = newViewController
+        self.mm_drawerController?.closeDrawer(animated: true, completion: nil)
+
     }
     
     @IBAction func btnSendClicked(_ sender: Any) {
@@ -129,6 +164,7 @@ extension HomeVC{
         newViewController.view.translatesAutoresizingMaskIntoConstraints = false
         self.cycleFromViewController(self.currentViewController!, toViewController: newViewController)
         self.currentViewController = newViewController
+        self.mm_drawerController?.closeDrawer(animated: true, completion: nil)
         
     }
 }

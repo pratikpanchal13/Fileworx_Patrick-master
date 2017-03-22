@@ -11,7 +11,7 @@ import MMDrawerController
 
 class FWLeftSideMenu: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    var menuItems:[String] = ["Main","About"];
+    var menuItems:[String] = ["Message","Media"];
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -40,28 +40,33 @@ class FWLeftSideMenu: UIViewController, UITableViewDataSource, UITableViewDelega
     {
 //                let mainStoryboard :UIStoryboard = UIStoryboard(name: "LoginSplash", bundle: nil)
 
-//        switch(indexPath.row)
-//        {
-//        case 0:
-//            
-//            let centerViewController = mainStoryboard.instantiateViewController(withIdentifier: "MediaVC") as! MediaVC
-//            let centerNavController = UINavigationController(rootViewController: centerViewController)
-//           FWUtilityDrawer().appDelegate.centerContainer!.centerViewController = centerNavController
-//            FWUtilityDrawer().appDelegate.centerContainer!.toggle(MMDrawerSide.left, animated: true, completion: nil)
-//            break;
-//        case 1:
-//            let aboutViewController = mainStoryboard.instantiateViewController(withIdentifier: "MessageVC") as! MessageVC
-//            let aboutNavController = UINavigationController(rootViewController: aboutViewController)
-//            FWUtilityDrawer().appDelegate.centerContainer!.centerViewController = aboutNavController
-//            FWUtilityDrawer().appDelegate.centerContainer!.toggle(MMDrawerSide.left, animated: true, completion: nil)
-//            break;
-//        default:
-//            print("\(menuItems[indexPath.row]) is selected");
+        
+        switch(indexPath.row)
+        {
+        case 0:
+            
+            NotificationCenter.default.post(name: NSNotification.Name("notifyHomePage"), object:"MessageVC")
+//            let aStoryboard = UIStoryboard(name: "LoginSplash", bundle: nil)
+//            let centerVC = aStoryboard.instantiateViewController(withIdentifier: "MessageVC")
+//            self.mm_drawerController?.setCenterView(centerVC, withCloseAnimation: true, completion: nil)
+            break;
+        case 1:
+            NotificationCenter.default.post(name: NSNotification.Name("notifyHomePage"), object:"MediaVC")
+            
+//            let aStoryboard = UIStoryboard(name: "LoginSplash", bundle: nil)
+//            let centerVC = aStoryboard.instantiateViewController(withIdentifier: "MediaVC")
+//            self.mm_drawerController?.setCenterView(centerVC, withCloseAnimation: true, completion: nil)
+            break;
+        default:
+            print("\(menuItems[indexPath.row]) is selected");
 //        }
         
-        let aStoryboard = UIStoryboard(name: "LoginSplash", bundle: nil)
-        let centerVC = aStoryboard.instantiateViewController(withIdentifier: "MediaVC")
-        self.mm_drawerController?.setCenterView(centerVC, withCloseAnimation: true, completion: nil)
-
+      
+        }
+    }
+    
+    func setHomePage()
+    {
+        
     }
 }

@@ -133,13 +133,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Fileworx_Patrick/Classes/SideMenuVC/FWLeftSideMenu.swift"
-            timestampString = "511874371.833223"
+            filePath = "Fileworx_Patrick/Classes/HomeVC/HomeVC.swift"
+            timestampString = "511878212.485643"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
-            landmarkName = "tableView(_:numberOfRowsInSection:)"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
+            landmarkName = "setHomePage(notification:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
