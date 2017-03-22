@@ -69,4 +69,10 @@ class FWLeftSideMenu: UIViewController, UITableViewDataSource, UITableViewDelega
     {
         
     }
+    
+    @IBAction func btnLogoutClicked(_ sender: Any) {
+
+        let navigationController = FWUtilityDrawer().appDelegate.window?.rootViewController as! UINavigationController
+        navigationController.popToRootViewController(animated: false)
+    }
 }

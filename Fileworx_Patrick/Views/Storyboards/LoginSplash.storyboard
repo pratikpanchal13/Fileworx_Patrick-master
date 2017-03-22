@@ -693,11 +693,63 @@
                                     <outlet property="delegate" destination="i9U-9g-hTN" id="FS1-uI-21t"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qmu-oX-7sY" userLabel="Bottom View">
+                                <rect key="frame" x="0.0" y="602" width="375" height="65"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7I0-RC-dJt">
+                                        <rect key="frame" x="319" y="15" width="35" height="35"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="6ck-Og-PU3"/>
+                                            <constraint firstAttribute="width" constant="35" id="aiD-au-XbF"/>
+                                        </constraints>
+                                        <state key="normal" image="Help"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h90-lX-CGu">
+                                        <rect key="frame" x="283" y="15" width="35" height="35"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="35" id="80D-9a-ELk"/>
+                                            <constraint firstAttribute="height" constant="35" id="Ov9-H1-jWu"/>
+                                        </constraints>
+                                        <state key="normal" image="Info"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yI6-ZR-7A6">
+                                        <rect key="frame" x="21" y="15" width="35" height="35"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="35" id="XOq-eb-Fnv"/>
+                                            <constraint firstAttribute="height" constant="35" id="nbH-Uz-h01"/>
+                                        </constraints>
+                                        <state key="normal" image="LogOut"/>
+                                        <connections>
+                                            <action selector="btnLogoutClicked:" destination="i9U-9g-hTN" eventType="touchUpInside" id="nmi-Dy-4RD"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="7I0-RC-dJt" firstAttribute="leading" secondItem="h90-lX-CGu" secondAttribute="trailing" constant="1" id="2KT-iI-RGs"/>
+                                    <constraint firstItem="yI6-ZR-7A6" firstAttribute="centerY" secondItem="Qmu-oX-7sY" secondAttribute="centerY" id="IHJ-Xh-ytn"/>
+                                    <constraint firstItem="h90-lX-CGu" firstAttribute="centerY" secondItem="Qmu-oX-7sY" secondAttribute="centerY" id="V3p-ud-eEg"/>
+                                    <constraint firstItem="yI6-ZR-7A6" firstAttribute="leading" secondItem="Qmu-oX-7sY" secondAttribute="leading" constant="21" id="aGU-bQ-lCU"/>
+                                    <constraint firstItem="7I0-RC-dJt" firstAttribute="centerY" secondItem="Qmu-oX-7sY" secondAttribute="centerY" id="afr-o3-wp2"/>
+                                    <constraint firstAttribute="trailing" secondItem="7I0-RC-dJt" secondAttribute="trailing" constant="21" id="esd-sF-i6R"/>
+                                    <constraint firstAttribute="height" constant="90" id="ugW-hu-uoH">
+                                        <variation key="heightClass=compact-widthClass=compact" constant="70"/>
+                                        <variation key="heightClass=compact-widthClass=regular" constant="80"/>
+                                        <variation key="heightClass=regular-widthClass=compact" constant="65"/>
+                                    </constraint>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Qmu-oX-7sY" secondAttribute="trailing" id="GhE-Cn-4K1"/>
                             <constraint firstItem="vul-8z-jPz" firstAttribute="leading" secondItem="pU3-MC-k5p" secondAttribute="leading" id="JZ9-wh-iqi"/>
                             <constraint firstAttribute="trailing" secondItem="vul-8z-jPz" secondAttribute="trailing" id="TLa-bj-cjp"/>
+                            <constraint firstItem="H4e-Ot-HpT" firstAttribute="top" secondItem="Qmu-oX-7sY" secondAttribute="bottom" id="TWd-3c-XjM"/>
+                            <constraint firstItem="Qmu-oX-7sY" firstAttribute="leading" secondItem="pU3-MC-k5p" secondAttribute="leading" id="Y9b-nq-mDq"/>
                             <constraint firstItem="vul-8z-jPz" firstAttribute="top" secondItem="uLb-ZF-hat" secondAttribute="bottom" id="mkg-dP-t0F"/>
                         </constraints>
                     </view>
@@ -709,7 +761,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Help" width="22" height="22"/>
         <image name="Home" width="21" height="20"/>
+        <image name="Info" width="22" height="22"/>
+        <image name="LogOut" width="19" height="21"/>
         <image name="Login1.jpg" width="16" height="16"/>
         <image name="LoginQNA" width="375" height="667"/>
         <image name="Logo_QNA2" width="93" height="109"/>

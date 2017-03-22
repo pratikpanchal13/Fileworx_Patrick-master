@@ -78,7 +78,7 @@ class HomeVC: UIViewController {
         
 //        FWUtilityDrawer().centerContainer!.toggle(MMDrawerSide.right, animated: true, completion: nil)
         self.view.endEditing(true)
-        self.mm_drawerController?.toggle(.right, animated: true, completion: nil)
+        self.mm_drawerController?.toggle(.left, animated: true, completion: nil)
 
 
     }
