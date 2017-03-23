@@ -16,40 +16,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        
-//        let rootViewController = self.window?.rootViewController
-//        let mainStoryboard :UIStoryboard = UIStoryboard(name: "LoginSplash", bundle: nil)
-//        
-//        
-//        let centerViewController = mainStoryboard.instantiateViewController(withIdentifier: "HomeVC") as! HomeVC
-//        
-//        
-//        let leftViewController = mainStoryboard.instantiateViewController(withIdentifier: "FWLeftSideMenu") as! FWLeftSideMenu
-//        let rightViewController = mainStoryboard.instantiateViewController(withIdentifier: "MediaVC") as! MediaVC
-//        
-//        let leftSideNav = UINavigationController(rootViewController: leftViewController)
-//        let centerNav = UINavigationController(rootViewController: centerViewController)
-//        let rightNav = UINavigationController(rootViewController: rightViewController)
-//        
-//        centerContainer = MMDrawerController(center: centerNav, leftDrawerViewController: leftSideNav,rightDrawerViewController:nil)
-//        //        centerContainer!.openDrawerGestureModeMask = MMOpenDrawerGestureMode.panningCenterView;
-//        //        centerContainer!.closeDrawerGestureModeMask = MMCloseDrawerGestureMode.panningCenterView;
-//        
-//        
-//        
-//        centerContainer?.setMaximumLeftDrawerWidth((self.window?.frame.size.width)! * 0.8, animated: false, completion: nil)
-//        centerContainer?.restorationIdentifier = "MMDrawer"
-//        centerContainer?.openDrawerGestureModeMask = .all
-//        centerContainer?.closeDrawerGestureModeMask = .all
-//        centerContainer?.showsShadow = true
-////        centerContainer?.shadowColor = UIColor.gray
-//        
-//        
-//        window!.rootViewController = centerContainer
-//        window!.makeKeyAndVisible()
-
-        
         return true
     }
 

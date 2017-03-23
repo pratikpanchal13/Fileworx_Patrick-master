@@ -60,6 +60,8 @@
 		A9AC36221E1B79E50053B560 /* RobotoCondensed-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A9AC360F1E1B79E50053B560 /* RobotoCondensed-Light.ttf */; };
 		A9AC36231E1B79E50053B560 /* RobotoCondensed-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A9AC36101E1B79E50053B560 /* RobotoCondensed-LightItalic.ttf */; };
 		A9AC36241E1B79E50053B560 /* RobotoCondensed-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A9AC36111E1B79E50053B560 /* RobotoCondensed-Regular.ttf */; };
+		A9E9B4741E83901F003A94CB /* FWUtilityNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E9B4731E83901F003A94CB /* FWUtilityNotification.swift */; };
+		A9EA85951E82B13500A0B0C0 /* FWUtilityAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EA85941E82B13500A0B0C0 /* FWUtilityAppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -120,6 +122,8 @@
 		A9AC360F1E1B79E50053B560 /* RobotoCondensed-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Light.ttf"; sourceTree = "<group>"; };
 		A9AC36101E1B79E50053B560 /* RobotoCondensed-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-LightItalic.ttf"; sourceTree = "<group>"; };
 		A9AC36111E1B79E50053B560 /* RobotoCondensed-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Regular.ttf"; sourceTree = "<group>"; };
+		A9E9B4731E83901F003A94CB /* FWUtilityNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FWUtilityNotification.swift; sourceTree = "<group>"; };
+		A9EA85941E82B13500A0B0C0 /* FWUtilityAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FWUtilityAppDelegate.swift; sourceTree = "<group>"; };
 		A9F2391C460976B575F84DE6 /* Pods-Fileworx_Patrick.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fileworx_Patrick.release.xcconfig"; path = "Pods/Target Support Files/Pods-Fileworx_Patrick/Pods-Fileworx_Patrick.release.xcconfig"; sourceTree = "<group>"; };
 		BA5C3A277B39B757AF30DB82 /* Pods-Fileworx_Patrick.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fileworx_Patrick.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Fileworx_Patrick/Pods-Fileworx_Patrick.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -257,6 +261,8 @@
 				A99C71AF1E3B65BE005B8C38 /* FWUtilityUserDefault.swift */,
 				A99C71B11E3B664C005B8C38 /* FWLanguageUitility.swift */,
 				A90DBDD91E82876A00E532D0 /* FWUtilityDrawer.swift */,
+				A9EA85941E82B13500A0B0C0 /* FWUtilityAppDelegate.swift */,
+				A9E9B4731E83901F003A94CB /* FWUtilityNotification.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -611,7 +617,9 @@
 				A99249B51E3877640085924B /* WebService.swift in Sources */,
 				A99C71A51E3B54B8005B8C38 /* Localisator.swift in Sources */,
 				A933E86C1E5FFE8F00B5D18F /* FWContents.swift in Sources */,
+				A9E9B4741E83901F003A94CB /* FWUtilityNotification.swift in Sources */,
 				A99249FE1E38A2830085924B /* FWMobileSettingModel.swift in Sources */,
+				A9EA85951E82B13500A0B0C0 /* FWUtilityAppDelegate.swift in Sources */,
 				A933E8741E600C6300B5D18F /* FWMessageListCell.swift in Sources */,
 				A99C71B01E3B65BE005B8C38 /* FWUtilityUserDefault.swift in Sources */,
 				A90DBDD81E82867100E532D0 /* FWLeftSideMenuCell.swift in Sources */,

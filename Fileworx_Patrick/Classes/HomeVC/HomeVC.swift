@@ -9,28 +9,18 @@
 import UIKit
 import MMDrawerController
 
-enum HomePage :String {
-    case Message
-    case Media
+//Enum For Set HomePage
+enum HomePage : String {
+    case MessageVC
+    case MediaVC
 
 }
-
-enum Movement {
-    case Left
-    case Right
-    case Top
-    case Bottom
-}
-
 
 class HomeVC: UIViewController {
 
-    // Variable & Outlets
-    
+    //Mark: - Properties & Outlets
     @IBOutlet weak var btnSideMenu: UIButton!
-   
     @IBOutlet weak var containerView: UIView!
-    
     @IBOutlet weak var lblTitleVC: UILabel!
     
     weak var currentViewController:UIViewController?
@@ -38,51 +28,15 @@ class HomeVC: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-
-        NotificationCenter.default.addObserver(self, selector: #selector(setHomePage), name: NSNotification.Name(rawValue: "notifyHomePage"), object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(setHomePage), name: NSNotification.Name(rawValue: FWUtilityNotification().FWConstSetHomePage), object: nil)
 
         let data =  UtilityUserDefault().getUDObject(KeyToReturnValye: "user")
         let data1 =  UtilityUserDefault().getUDBool(key: "pratik")
 
         self.navigationController?.isNavigationBarHidden = true
-
-        
-        print("My Data is \((data)!)")
-        print("My Data is \(data1)")
-        
-     
-        
         self.iniatLoadView()   // For Initail Load View Controller
     }
-    
-    func setHomePage(notification : NSNotification )
-    {
-        let notifyHomePage  = notification.object as! String
-        print("Set Home Page\(notifyHomePage)")
-    
-        if notifyHomePage == "MessageVC" {
-            self.btnHomeClicked(Any.self)
-        }
-        if notifyHomePage == "MediaVC"
-        {
-            self.btnSendClicked(Any.self)
-        }
-        
-    
-        
-    }
-
-  
-    @IBAction func btnSideMenuClicked(_ sender: Any) {
-
-        
-//        FWUtilityDrawer().centerContainer!.toggle(MMDrawerSide.right, animated: true, completion: nil)
-        self.view.endEditing(true)
-        self.mm_drawerController?.toggle(.left, animated: true, completion: nil)
-
-
-    }
-    
 }
 
 // List Of Function
@@ -95,8 +49,22 @@ extension HomeVC{
         self.currentViewController!.view.translatesAutoresizingMaskIntoConstraints = false
         self.addChildViewController(self.currentViewController!)
         self.addSubview(self.currentViewController!.view, toView: self.containerView)
-        
-        
+    }
+    
+    //Mark: - Set HomePage
+    func setHomePage(notification : NSNotification )
+    {
+        let notifyHomePage  = notification.object as! String
+        switch notifyHomePage {
+        case HomePage.MessageVC.rawValue:
+            self.btnHomeClicked(Any.self)
+            break
+        case HomePage.MediaVC.rawValue:
+            self.btnSendClicked(Any.self)
+            break
+        default:
+            break
+        }
     }
     
 }
@@ -131,23 +99,20 @@ extension HomeVC{
         parentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[subView]|",
                                                                  options: [], metrics: nil, views: viewBindingsDict))
         
-        
-        
-        
-        
     }
-    
 }
-
 
 // Button Clicked Event
 extension HomeVC{
 
-    // MARK : - Button Clicked Event
+    // MARK: - Set Side Menu
+    @IBAction func btnSideMenuClicked(_ sender: Any) {
+        self.view.endEditing(true)
+        self.mm_drawerController?.toggle(.left, animated: true, completion: nil)
+    }
     
-   
+    // MARK : - Button MessageVC
     @IBAction func btnHomeClicked(_ sender: Any) {
-        
         lblTitleVC.text = "Messages"
         let newViewController = Constants.Storyboard.kLoginAndSplashStoryboard.instantiateViewController(withIdentifier: "MessageVC")
         newViewController.view.translatesAutoresizingMaskIntoConstraints = false
@@ -157,8 +122,8 @@ extension HomeVC{
 
     }
     
+    // MARK : - Button  MediaVC
     @IBAction func btnSendClicked(_ sender: Any) {
-        
         lblTitleVC.text = "Media"
         let newViewController = Constants.Storyboard.kLoginAndSplashStoryboard.instantiateViewController(withIdentifier: "MediaVC")
         newViewController.view.translatesAutoresizingMaskIntoConstraints = false

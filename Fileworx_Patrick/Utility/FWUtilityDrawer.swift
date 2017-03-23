@@ -14,7 +14,6 @@ class FWUtilityDrawer
 {
     var centerContainer : MMDrawerController?
     static let sharedInstance = FWUtilityDrawer()
-    let appDelegate : AppDelegate = UIApplication.shared.delegate as! AppDelegate
 
     func loginToDrawerFrom(_ controller : UIViewController,animated: Bool){
 
@@ -44,7 +43,7 @@ class FWUtilityDrawer
         centerContainer?.showsShadow = true
         //        centerContainer?.shadowColor = UIColor.gray
         
-        let navigationController = appDelegate.window?.rootViewController as! UINavigationController
+        let navigationController = FWUtilityAppDelegate().appDelegate.window?.rootViewController as! UINavigationController
         navigationController.pushViewController(centerContainer!, animated: true)
 
        

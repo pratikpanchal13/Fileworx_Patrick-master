@@ -11,7 +11,11 @@ import MMDrawerController
 
 class FWLeftSideMenu: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    //Mark: - Properties & Outlets
+
     var menuItems:[String] = ["Message","Media"];
+    
+    // Mark: - View Life Cycle
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -21,14 +25,12 @@ class FWLeftSideMenu: UIViewController, UITableViewDataSource, UITableViewDelega
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+    
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return menuItems.count;
     }
+    
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let mycell = tableView.dequeueReusableCell(withIdentifier: "FWLeftSideMenuCell", for: indexPath) as! FWLeftSideMenuCell
@@ -38,41 +40,33 @@ class FWLeftSideMenu: UIViewController, UITableViewDataSource, UITableViewDelega
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
-//                let mainStoryboard :UIStoryboard = UIStoryboard(name: "LoginSplash", bundle: nil)
 
         
         switch(indexPath.row)
         {
         case 0:
             
-            NotificationCenter.default.post(name: NSNotification.Name("notifyHomePage"), object:"MessageVC")
+            NotificationCenter.default.post(name: NSNotification.Name(FWUtilityNotification().FWConstSetHomePage), object:"MessageVC")
 //            let aStoryboard = UIStoryboard(name: "LoginSplash", bundle: nil)
 //            let centerVC = aStoryboard.instantiateViewController(withIdentifier: "MessageVC")
 //            self.mm_drawerController?.setCenterView(centerVC, withCloseAnimation: true, completion: nil)
             break;
         case 1:
-            NotificationCenter.default.post(name: NSNotification.Name("notifyHomePage"), object:"MediaVC")
+            NotificationCenter.default.post(name: NSNotification.Name(FWUtilityNotification().FWConstSetHomePage), object:"MediaVC")
             
 //            let aStoryboard = UIStoryboard(name: "LoginSplash", bundle: nil)
 //            let centerVC = aStoryboard.instantiateViewController(withIdentifier: "MediaVC")
 //            self.mm_drawerController?.setCenterView(centerVC, withCloseAnimation: true, completion: nil)
             break;
-        default:
-            print("\(menuItems[indexPath.row]) is selected");
-//        }
-        
+        default: break
       
         }
     }
     
-    func setHomePage()
-    {
-        
-    }
-    
+    // Mark:- Logout Clicked
     @IBAction func btnLogoutClicked(_ sender: Any) {
 
-        let navigationController = FWUtilityDrawer().appDelegate.window?.rootViewController as! UINavigationController
+        let navigationController = FWUtilityAppDelegate().appDelegate.window?.rootViewController as! UINavigationController
         navigationController.popToRootViewController(animated: false)
     }
 }
