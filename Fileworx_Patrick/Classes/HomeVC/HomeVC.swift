@@ -23,6 +23,7 @@ class HomeVC: UIViewController {
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var lblTitleVC: UILabel!
     
+    @IBOutlet weak var viewNavigation: UIView!
     weak var currentViewController:UIViewController?
     
     override func viewDidLoad() {
@@ -36,6 +37,13 @@ class HomeVC: UIViewController {
 
         self.navigationController?.isNavigationBarHidden = true
         self.iniatLoadView()   // For Initail Load View Controller
+    }
+    override func viewWillAppear(_ animated: Bool) {
+
+        super.viewWillAppear(animated)
+
+        self.mm_drawerController?.closeDrawer(animated: false, completion: nil)
+
     }
 }
 

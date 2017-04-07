@@ -28,7 +28,8 @@ class FWLoginVC: UIViewController {
     var objUserModel : FWUserModel?
     
     var aMutArrayAvailableModule:[Any]?
-    
+    let arrayLanguages = Localisator.sharedInstance.getArrayAvailableLanguages()    // 1) without Restart Method
+
     // MARK: - View Life Cycle
     
     override func viewDidLoad() {
@@ -47,32 +48,33 @@ class FWLoginVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         
-        let isLeftToRight = UIView.userInterfaceLayoutDirection(
-            for: view.semanticContentAttribute) == .leftToRight
-
-        if isLeftToRight {
+        
+//        UtilityUserDefault().setUDObject(ObjectToSave: arrayLanguages[1] as AnyObject?, KeyToSave: "Language")
+        let language :String =   UtilityUserDefault().getUDObject(KeyToReturnValye: "Language") as! String
+        
+        print("language is \(language)")
+        
+        
+        if language == "ar" {
+            
             UIView.appearance().semanticContentAttribute = .forceRightToLeft
             self.txtUserName.textAlignment = NSTextAlignment.right
             self.txtPassword.textAlignment = NSTextAlignment.right
-
-        }else{
+            UtilityUserDefault().setUDObject(ObjectToSave: arrayLanguages[3] as AnyObject?, KeyToSave: "Language")
+        }
+        else
+        {
+            UtilityUserDefault().setUDObject(ObjectToSave: arrayLanguages[1] as AnyObject?, KeyToSave: "Language")
             UIView.appearance().semanticContentAttribute = .forceLeftToRight
             self.txtUserName.textAlignment = NSTextAlignment.left
             self.txtPassword.textAlignment = NSTextAlignment.left
+            
         }
         
     }
     
     @IBAction func btnLoginClicked(_ sender: Any) {
-        
-
-        
-        self.CallAPILogin()
-        
-        
-        
-        
-        
+                self.CallAPILogin()
         
     }
     @IBAction func btnLoginAsGuestClicked(_ sender: Any) {

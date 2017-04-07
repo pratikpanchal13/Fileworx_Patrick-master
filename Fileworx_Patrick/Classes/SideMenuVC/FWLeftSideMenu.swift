@@ -19,7 +19,8 @@ class FWLeftSideMenu: UIViewController, UITableViewDataSource, UITableViewDelega
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        self.navigationController?.view.layoutSubviews()
+        self.navigationController?.isNavigationBarHidden = true
+
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,5 +69,14 @@ class FWLeftSideMenu: UIViewController, UITableViewDataSource, UITableViewDelega
 
         let navigationController = FWUtilityAppDelegate().appDelegate.window?.rootViewController as! UINavigationController
         navigationController.popToRootViewController(animated: false)
+    }
+    @IBAction func btnSettingClicked(_ sender: Any) {
+        
+        let aStoryboard = UIStoryboard(name: "LoginSplash", bundle: nil)
+        let centerVC = aStoryboard.instantiateViewController(withIdentifier: "SettingVC")
+
+        let navigationController = FWUtilityAppDelegate().appDelegate.window?.rootViewController as! UINavigationController
+        navigationController.pushViewController(centerVC, animated: true)
+        
     }
 }

@@ -60,6 +60,7 @@
 		A9AC36221E1B79E50053B560 /* RobotoCondensed-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A9AC360F1E1B79E50053B560 /* RobotoCondensed-Light.ttf */; };
 		A9AC36231E1B79E50053B560 /* RobotoCondensed-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A9AC36101E1B79E50053B560 /* RobotoCondensed-LightItalic.ttf */; };
 		A9AC36241E1B79E50053B560 /* RobotoCondensed-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A9AC36111E1B79E50053B560 /* RobotoCondensed-Regular.ttf */; };
+		A9C903771E976C4900ADF2BB /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C903761E976C4900ADF2BB /* SettingVC.swift */; };
 		A9E9B4741E83901F003A94CB /* FWUtilityNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E9B4731E83901F003A94CB /* FWUtilityNotification.swift */; };
 		A9EA85951E82B13500A0B0C0 /* FWUtilityAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EA85941E82B13500A0B0C0 /* FWUtilityAppDelegate.swift */; };
 /* End PBXBuildFile section */
@@ -122,6 +123,7 @@
 		A9AC360F1E1B79E50053B560 /* RobotoCondensed-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Light.ttf"; sourceTree = "<group>"; };
 		A9AC36101E1B79E50053B560 /* RobotoCondensed-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-LightItalic.ttf"; sourceTree = "<group>"; };
 		A9AC36111E1B79E50053B560 /* RobotoCondensed-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Regular.ttf"; sourceTree = "<group>"; };
+		A9C903761E976C4900ADF2BB /* SettingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingVC.swift; sourceTree = "<group>"; };
 		A9E9B4731E83901F003A94CB /* FWUtilityNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FWUtilityNotification.swift; sourceTree = "<group>"; };
 		A9EA85941E82B13500A0B0C0 /* FWUtilityAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FWUtilityAppDelegate.swift; sourceTree = "<group>"; };
 		A9F2391C460976B575F84DE6 /* Pods-Fileworx_Patrick.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fileworx_Patrick.release.xcconfig"; path = "Pods/Target Support Files/Pods-Fileworx_Patrick/Pods-Fileworx_Patrick.release.xcconfig"; sourceTree = "<group>"; };
@@ -305,6 +307,7 @@
 		A9AC35E31E1B736C0053B560 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				A9C903751E976C3700ADF2BB /* SettingVC */,
 				A90DBDD31E8285C700E532D0 /* SideMenuVC */,
 				A988A9E51E1CC591009F4729 /* MediaVC */,
 				A988A9E21E1CC550009F4729 /* MessageVC */,
@@ -450,6 +453,14 @@
 				A9AC36111E1B79E50053B560 /* RobotoCondensed-Regular.ttf */,
 			);
 			path = roboto;
+			sourceTree = "<group>";
+		};
+		A9C903751E976C3700ADF2BB /* SettingVC */ = {
+			isa = PBXGroup;
+			children = (
+				A9C903761E976C4900ADF2BB /* SettingVC.swift */,
+			);
+			path = SettingVC;
 			sourceTree = "<group>";
 		};
 		BA2230719F879BB6931EEB58 /* Pods */ = {
@@ -607,6 +618,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9AC35EC1E1B73CA0053B560 /* AppDelegate.swift in Sources */,
+				A9C903771E976C4900ADF2BB /* SettingVC.swift in Sources */,
 				A988A9E71E1CC59B009F4729 /* MediaVC.swift in Sources */,
 				A933E86E1E5FFE8F00B5D18F /* FWDateOptionsList.swift in Sources */,
 				A90DBDD51E8285EA00E532D0 /* FWLeftSideMenu.swift in Sources */,
