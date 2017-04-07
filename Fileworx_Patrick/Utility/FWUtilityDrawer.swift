@@ -38,16 +38,35 @@ class FWUtilityDrawer
         
         centerContainer?.setMaximumLeftDrawerWidth(280, animated: false, completion: nil)
         centerContainer?.restorationIdentifier = "MMDrawer"
-        centerContainer?.openDrawerGestureModeMask = .all
+        centerContainer?.openDrawerGestureModeMask = .init(rawValue: 2)
         centerContainer?.closeDrawerGestureModeMask = .all
         centerContainer?.showsShadow = true
         //        centerContainer?.shadowColor = UIColor.gray
         
         let navigationController = FWUtilityAppDelegate().appDelegate.window?.rootViewController as! UINavigationController
         navigationController.pushViewController(centerContainer!, animated: true)
-
-       
         
     }
+    
+//    func setLocalizationDrawer()
+//    {
+//        if language == "ar" {
+//            centerContainer?.toggle(.right, animated: true, completion: nil)
+//            centerContainer.open(MMDrawerSide.right, animated: true, completion: nil)
+//        }
+//        else
+//        {
+//            centerContainer?.toggle(.left, animated: true, completion: nil)
+//            open(MMDrawerSide.left, animated: true, completion: nil)
+//        }
+//
+//    }
+//    
+    
+    
+  
+    
+    
+    
 }
 

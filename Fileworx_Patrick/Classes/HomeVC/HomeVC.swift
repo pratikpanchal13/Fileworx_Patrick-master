@@ -46,24 +46,7 @@ class HomeVC: UIViewController {
         FWLanguageUitily().setLocalizationView(self.view)
         FWLanguageUitily().setLocalizationView(viewNavigation)
 
-        //        if let language :String =   UtilityUserDefault().getUDObject(KeyToReturnValye: "Language") as? String
-//        {
-//            
-//            print("language is \(language)")
-//            
-//            
-//            if language == "ar" {
-//                
-//                UIView.appearance().semanticContentAttribute = .forceRightToLeft
-//                UtilityUserDefault().setUDObject(ObjectToSave: arrayLanguages[3] as AnyObject?, KeyToSave: "Language")
-//            }
-//            else
-//            {
-//                UtilityUserDefault().setUDObject(ObjectToSave: arrayLanguages[1] as AnyObject?, KeyToSave: "Language")
-//                UIView.appearance().semanticContentAttribute = .forceLeftToRight
-//                
-//            }
-//        }
+        
         
 
         self.mm_drawerController?.closeDrawer(animated: false, completion: nil)
@@ -140,7 +123,21 @@ extension HomeVC{
     // MARK: - Set Side Menu
     @IBAction func btnSideMenuClicked(_ sender: Any) {
         self.view.endEditing(true)
-        self.mm_drawerController?.toggle(.left, animated: true, completion: nil)
+        
+//        self.mm_drawerController?.toggle(.left, animated: true, completion: nil)
+
+        if let language :String =   UtilityUserDefault().getUDObject(KeyToReturnValye: "Language") as? String
+        {
+            if language == "ar" {
+                self.mm_drawerController?.toggle(.right, animated: true, completion: nil)
+
+            }
+            else
+            {
+                self.mm_drawerController?.toggle(.left, animated: true, completion: nil)
+            }
+        }
+
     }
     
     // MARK : - Button MessageVC
@@ -165,3 +162,4 @@ extension HomeVC{
         
     }
 }
+

@@ -8,32 +8,12 @@
 
 import Foundation
 import UIKit
-
+import MMDrawerController
 
 class FWLanguageUitily
 {
     let arrayLanguages = Localisator.sharedInstance.getArrayAvailableLanguages()    // 1) without Restart Method
 
-    func setTextField(textField:UITextField) {
-//        
-//        let isLeftToRight = UIView.userInterfaceLayoutDirection(
-//            for: view.semanticContentAttribute) == .leftToRight
-//        
-//        if isLeftToRight {
-//            UIView.appearance().semanticContentAttribute = .forceRightToLeft
-//            textField.textAlignment = NSTextAlignment.right
-//            
-//            
-//        }else{
-//            UIView.appearance().semanticContentAttribute = .forceLeftToRight
-//            textField.textAlignment = NSTextAlignment.left
-//            
-//        }
-        
-        //
-    }
-    
-    
     public func setLanguage()
     {
         if let language :String =   UtilityUserDefault().getUDObject(KeyToReturnValye: "Language") as? String
@@ -115,31 +95,6 @@ class FWLanguageUitily
         }
     }
     
-    
-    
-    func setLeftToRightView(_ view : UIView)
-    {
-             UIView.appearance().semanticContentAttribute = .forceLeftToRight
-             view.semanticContentAttribute = .forceLeftToRight
-    }
-    func setRightTOLeftView(_ view : UIView)
-    {
-        UIView.appearance().semanticContentAttribute = .forceRightToLeft
-        view.semanticContentAttribute = .forceRightToLeft
-
-    }
-    
-    func setRightTOLeftTextField(_ textField : UITextField)
-    {
-        UIView.appearance().semanticContentAttribute = .forceLeftToRight
-        textField.textAlignment = .right
-    }
-    
-    func setLeftToRightTextField(_ textField : UITextField)
-    {
-        UIView.appearance().semanticContentAttribute = .forceLeftToRight
-        textField.textAlignment = .left
-
-    }
+  
 }
 
