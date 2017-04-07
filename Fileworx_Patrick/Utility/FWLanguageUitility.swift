@@ -12,7 +12,8 @@ import UIKit
 
 class FWLanguageUitily
 {
-    
+    let arrayLanguages = Localisator.sharedInstance.getArrayAvailableLanguages()    // 1) without Restart Method
+
     func setTextField(textField:UITextField) {
 //        
 //        let isLeftToRight = UIView.userInterfaceLayoutDirection(
@@ -31,4 +32,79 @@ class FWLanguageUitily
         
         //
     }
+    
+    
+    public func setLanguage()
+    {
+        if let language :String =   UtilityUserDefault().getUDObject(KeyToReturnValye: "Language") as? String
+        {
+            print("language is \(language)")
+            if language == "ar" {
+                if SetLanguage(arrayLanguages[3]) {
+                    UtilityUserDefault().setUDObject(ObjectToSave: arrayLanguages[3] as AnyObject?, KeyToSave: "Language")
+                    UIView.appearance().semanticContentAttribute = .forceLeftToRight
+                }
+            }
+            else
+            {
+                if SetLanguage(arrayLanguages[1]) {
+                    UtilityUserDefault().setUDObject(ObjectToSave: arrayLanguages[1] as AnyObject?, KeyToSave: "Language")
+                    UIView.appearance().semanticContentAttribute = .forceLeftToRight
+                }
+            }
+        }
+    }
+    
+    
+    func setLocalizationView(_ view : UIView){
+        
+        if let language :String =   UtilityUserDefault().getUDObject(KeyToReturnValye: "Language") as? String
+        {
+            print("language is \(language)")
+            
+            if language == "ar" {
+                
+                UtilityUserDefault().setUDObject(ObjectToSave: arrayLanguages[3] as AnyObject?, KeyToSave: "Language")
+                UIView.appearance().semanticContentAttribute = .forceRightToLeft
+                view.semanticContentAttribute = .forceRightToLeft
+                
+            }
+            else
+            {
+                UtilityUserDefault().setUDObject(ObjectToSave: arrayLanguages[1] as AnyObject?, KeyToSave: "Language")
+                UIView.appearance().semanticContentAttribute = .forceLeftToRight
+                view.semanticContentAttribute = .forceLeftToRight
+                
+            }
+        }
+    }
+    
+    
+    
+    
+    func setLeftToRightView(_ view : UIView)
+    {
+             UIView.appearance().semanticContentAttribute = .forceLeftToRight
+             view.semanticContentAttribute = .forceLeftToRight
+    }
+    func setRightTOLeftView(_ view : UIView)
+    {
+        UIView.appearance().semanticContentAttribute = .forceRightToLeft
+        view.semanticContentAttribute = .forceRightToLeft
+
+    }
+    
+    func setRightTOLeftTextField(_ textField : UITextField)
+    {
+        UIView.appearance().semanticContentAttribute = .forceLeftToRight
+        textField.textAlignment = .right
+    }
+    
+    func setLeftToRightTextField(_ textField : UITextField)
+    {
+        UIView.appearance().semanticContentAttribute = .forceLeftToRight
+        textField.textAlignment = .left
+
+    }
 }
+

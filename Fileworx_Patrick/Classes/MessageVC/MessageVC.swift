@@ -43,29 +43,13 @@ class MessageVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
 
-        if let language :String =   UtilityUserDefault().getUDObject(KeyToReturnValye: "Language") as? String
-        {
-            print("language is \(language)")
-            
-            
-            if language == "ar" {
-                
-                UtilityUserDefault().setUDObject(ObjectToSave: arrayLanguages[3] as AnyObject?, KeyToSave: "Language")
-                lblMessage.text = Localization("Hello")
-                
-            }
-            else
-            {
-                UtilityUserDefault().setUDObject(ObjectToSave: arrayLanguages[3] as AnyObject?, KeyToSave: "Language")
-                lblMessage.text = Localization("Hello")
-                
-            }
-            
-        }
         
-//        let language :String =   UtilityUserDefault().getUDObject(KeyToReturnValye: "Language") as! String
+        FWLanguageUitily().setLanguage()
         
-      
+        lblMessage.text = Localization("Hello")
+
+
+
 
         
 
@@ -79,35 +63,35 @@ extension MessageVC{
     
     @IBAction func setAppLanguage(_ sender: UISwitch) {
         
-        if sender.isOn {
-            if SetLanguage(arrayLanguages[1]) {
-                lblMessage.text = Localization("Hello")
-                
-                _ = UIView.userInterfaceLayoutDirection(
-                    for: view.semanticContentAttribute) == .leftToRight
-                     UIView.appearance().semanticContentAttribute = .forceLeftToRight
-                lblMessage.textAlignment = NSTextAlignment.left
-                
-                UtilityUserDefault().setUDObject(ObjectToSave: arrayLanguages[1] as AnyObject?, KeyToSave: "Language")
-            }
-            //changeLang(language: "en")    // 1) With Restart Method
-            print("this is English")
-            
-        } else {
-            if SetLanguage(arrayLanguages[3]) {
-                lblMessage.text = Localization("Hello")
-                lblMessage.textAlignment = NSTextAlignment.right
-                _ = UIView.userInterfaceLayoutDirection(
-                    for: view.semanticContentAttribute) == .rightToLeft
-                     UIView.appearance().semanticContentAttribute = .forceRightToLeft
-
-                UtilityUserDefault().setUDObject(ObjectToSave: arrayLanguages[3] as AnyObject?, KeyToSave: "Language")
-
-            }
-            //changeLang(language: "ar") // 1) With Restart Method
-            print("this is Arabic")
-            
-        }
+//        if sender.isOn {
+//            if SetLanguage(arrayLanguages[1]) {
+//                lblMessage.text = Localization("Hello")
+//                
+//                _ = UIView.userInterfaceLayoutDirection(
+//                    for: view.semanticContentAttribute) == .leftToRight
+//                     UIView.appearance().semanticContentAttribute = .forceLeftToRight
+//                lblMessage.textAlignment = NSTextAlignment.left
+//                
+//                UtilityUserDefault().setUDObject(ObjectToSave: arrayLanguages[1] as AnyObject?, KeyToSave: "Language")
+//            }
+//            //changeLang(language: "en")    // 1) With Restart Method
+//            print("this is English")
+//            
+//        } else {
+//            if SetLanguage(arrayLanguages[3]) {
+//                lblMessage.text = Localization("Hello")
+//                lblMessage.textAlignment = NSTextAlignment.right
+//                _ = UIView.userInterfaceLayoutDirection(
+//                    for: view.semanticContentAttribute) == .rightToLeft
+//                     UIView.appearance().semanticContentAttribute = .forceRightToLeft
+//
+//                UtilityUserDefault().setUDObject(ObjectToSave: arrayLanguages[3] as AnyObject?, KeyToSave: "Language")
+//
+//            }
+//            //changeLang(language: "ar") // 1) With Restart Method
+//            print("this is Arabic")
+//            
+//        }
     }
 
 }

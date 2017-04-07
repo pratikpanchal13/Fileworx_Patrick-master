@@ -69,22 +69,22 @@ class SettingVC: UIViewController,UITableViewDataSource,UITableViewDelegate {
 
         switch index {
         case 0:
-            print("Index 1")
+            print("English")
             UtilityUserDefault().setUDObject(ObjectToSave: arrayLanguages[1] as AnyObject?, KeyToSave: "Language")
 
             break
         case 1:
-            print("Index 2")
+            print("English")
             UtilityUserDefault().setUDObject(ObjectToSave: arrayLanguages[1] as AnyObject?, KeyToSave: "Language")
 
             break
         case 2:
             UtilityUserDefault().setUDObject(ObjectToSave: arrayLanguages[3] as AnyObject?, KeyToSave: "Language")
 
-            print("Index 3")
+            print("Arabic")
             break
         case 3:
-            UtilityUserDefault().setUDObject(ObjectToSave: arrayLanguages[4] as AnyObject?, KeyToSave: "Language")
+            UtilityUserDefault().setUDObject(ObjectToSave: arrayLanguages[3] as AnyObject?, KeyToSave: "Language")
 
             print("Index 4")
             break
