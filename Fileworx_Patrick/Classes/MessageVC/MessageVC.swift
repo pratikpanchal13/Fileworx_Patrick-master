@@ -47,11 +47,7 @@ class MessageVC: UIViewController {
         FWLanguageUitily().setLanguage()
         
         lblMessage.text = Localization("Hello")
-
-
-
-
-        
+        FWLanguageUitily().setLocalizationLabel(lblMessage)
 
     }
 

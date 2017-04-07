@@ -64,14 +64,12 @@ class FWLanguageUitily
             
             if language == "ar" {
                 
-                UtilityUserDefault().setUDObject(ObjectToSave: arrayLanguages[3] as AnyObject?, KeyToSave: "Language")
                 UIView.appearance().semanticContentAttribute = .forceRightToLeft
                 view.semanticContentAttribute = .forceRightToLeft
                 
             }
             else
             {
-                UtilityUserDefault().setUDObject(ObjectToSave: arrayLanguages[1] as AnyObject?, KeyToSave: "Language")
                 UIView.appearance().semanticContentAttribute = .forceLeftToRight
                 view.semanticContentAttribute = .forceLeftToRight
                 
@@ -79,6 +77,43 @@ class FWLanguageUitily
         }
     }
     
+    
+    func setLocalizationTextField(_ textField : UITextField){
+        
+        if let language :String =   UtilityUserDefault().getUDObject(KeyToReturnValye: "Language") as? String
+        {
+            print("language is \(language)")
+            
+            if language == "ar" {
+                
+                textField.textAlignment = .right
+            }
+            else
+            {
+                textField.textAlignment = .left
+                
+            }
+        }
+    }
+    
+   
+    func setLocalizationLabel(_ label : UILabel){
+        
+        if let language :String =   UtilityUserDefault().getUDObject(KeyToReturnValye: "Language") as? String
+        {
+            print("language is \(language)")
+            
+            if language == "ar" {
+                
+                label.textAlignment = .right
+            }
+            else
+            {
+                label.textAlignment = .left
+                
+            }
+        }
+    }
     
     
     
