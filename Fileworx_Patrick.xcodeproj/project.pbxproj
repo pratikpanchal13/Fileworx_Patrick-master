@@ -61,6 +61,7 @@
 		A9AC36231E1B79E50053B560 /* RobotoCondensed-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A9AC36101E1B79E50053B560 /* RobotoCondensed-LightItalic.ttf */; };
 		A9AC36241E1B79E50053B560 /* RobotoCondensed-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A9AC36111E1B79E50053B560 /* RobotoCondensed-Regular.ttf */; };
 		A9C903771E976C4900ADF2BB /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C903761E976C4900ADF2BB /* SettingVC.swift */; };
+		A9C903791E97894100ADF2BB /* CellSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C903781E97894100ADF2BB /* CellSettings.swift */; };
 		A9E9B4741E83901F003A94CB /* FWUtilityNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E9B4731E83901F003A94CB /* FWUtilityNotification.swift */; };
 		A9EA85951E82B13500A0B0C0 /* FWUtilityAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EA85941E82B13500A0B0C0 /* FWUtilityAppDelegate.swift */; };
 /* End PBXBuildFile section */
@@ -124,6 +125,7 @@
 		A9AC36101E1B79E50053B560 /* RobotoCondensed-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-LightItalic.ttf"; sourceTree = "<group>"; };
 		A9AC36111E1B79E50053B560 /* RobotoCondensed-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Regular.ttf"; sourceTree = "<group>"; };
 		A9C903761E976C4900ADF2BB /* SettingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingVC.swift; sourceTree = "<group>"; };
+		A9C903781E97894100ADF2BB /* CellSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellSettings.swift; sourceTree = "<group>"; };
 		A9E9B4731E83901F003A94CB /* FWUtilityNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FWUtilityNotification.swift; sourceTree = "<group>"; };
 		A9EA85941E82B13500A0B0C0 /* FWUtilityAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FWUtilityAppDelegate.swift; sourceTree = "<group>"; };
 		A9F2391C460976B575F84DE6 /* Pods-Fileworx_Patrick.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fileworx_Patrick.release.xcconfig"; path = "Pods/Target Support Files/Pods-Fileworx_Patrick/Pods-Fileworx_Patrick.release.xcconfig"; sourceTree = "<group>"; };
@@ -298,6 +300,7 @@
 				A9837B6F1E1D0DB200CFB6B9 /* Extension */,
 				A9AC35E71E1B736C0053B560 /* Resources */,
 				A9AC35E91E1B736C0053B560 /* Views */,
+				A9C9037A1E97976700ADF2BB /* Third Party */,
 				A9AC35DA1E1B72F70053B560 /* LaunchScreen.storyboard */,
 				A9AC35DD1E1B72F70053B560 /* Info.plist */,
 			);
@@ -352,7 +355,6 @@
 				A9AC35ED1E1B741B0053B560 /* API */,
 				A9AC35EE1E1B741B0053B560 /* Fonts */,
 				A9AC35EF1E1B741B0053B560 /* Images */,
-				A9AC35F01E1B741B0053B560 /* ThirdParty */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -396,13 +398,6 @@
 				A9AC35FC1E1B78100053B560 /* assests.xcassets */,
 			);
 			path = Images;
-			sourceTree = "<group>";
-		};
-		A9AC35F01E1B741B0053B560 /* ThirdParty */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ThirdParty;
 			sourceTree = "<group>";
 		};
 		A9AC35F11E1B74480053B560 /* LoginVC */ = {
@@ -459,8 +454,16 @@
 			isa = PBXGroup;
 			children = (
 				A9C903761E976C4900ADF2BB /* SettingVC.swift */,
+				A9C903781E97894100ADF2BB /* CellSettings.swift */,
 			);
 			path = SettingVC;
+			sourceTree = "<group>";
+		};
+		A9C9037A1E97976700ADF2BB /* Third Party */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Third Party";
 			sourceTree = "<group>";
 		};
 		BA2230719F879BB6931EEB58 /* Pods */ = {
@@ -647,6 +650,7 @@
 				A99249FC1E38A2830085924B /* FWDataMobileSetting.swift in Sources */,
 				A988A9EB1E1CCBD3009F4729 /* Constants.swift in Sources */,
 				A99249FD1E38A2830085924B /* FWGlobalMobileSetttings.swift in Sources */,
+				A9C903791E97894100ADF2BB /* CellSettings.swift in Sources */,
 				A933E86D1E5FFE8F00B5D18F /* FWData.swift in Sources */,
 				A9924A051E38A30D0085924B /* FWContentTasksList.swift in Sources */,
 			);

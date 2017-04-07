@@ -42,25 +42,30 @@ class MessageVC: UIViewController {
     
     
     override func viewWillAppear(_ animated: Bool) {
-        
-        let language :String =   UtilityUserDefault().getUDObject(KeyToReturnValye: "Language") as! String
-        
-        print("language is \(language)")
-        
-        
-        if language == "ar" {
-            
-            UtilityUserDefault().setUDObject(ObjectToSave: arrayLanguages[3] as AnyObject?, KeyToSave: "Language")
-            lblMessage.text = Localization("Hello")
 
-        }
-        else
+        if let language :String =   UtilityUserDefault().getUDObject(KeyToReturnValye: "Language") as? String
         {
-            UtilityUserDefault().setUDObject(ObjectToSave: arrayLanguages[3] as AnyObject?, KeyToSave: "Language")
-            lblMessage.text = Localization("Hello")
-
+            print("language is \(language)")
+            
+            
+            if language == "ar" {
+                
+                UtilityUserDefault().setUDObject(ObjectToSave: arrayLanguages[3] as AnyObject?, KeyToSave: "Language")
+                lblMessage.text = Localization("Hello")
+                
+            }
+            else
+            {
+                UtilityUserDefault().setUDObject(ObjectToSave: arrayLanguages[3] as AnyObject?, KeyToSave: "Language")
+                lblMessage.text = Localization("Hello")
+                
+            }
+            
         }
         
+//        let language :String =   UtilityUserDefault().getUDObject(KeyToReturnValye: "Language") as! String
+        
+      
 
         
 

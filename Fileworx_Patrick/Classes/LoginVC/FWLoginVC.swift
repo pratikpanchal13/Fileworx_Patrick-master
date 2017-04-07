@@ -50,31 +50,39 @@ class FWLoginVC: UIViewController {
         
         
 //        UtilityUserDefault().setUDObject(ObjectToSave: arrayLanguages[1] as AnyObject?, KeyToSave: "Language")
-        let language :String =   UtilityUserDefault().getUDObject(KeyToReturnValye: "Language") as! String
+       
+       
         
-        print("language is \(language)")
-        
-        
-        if language == "ar" {
-            
-            UIView.appearance().semanticContentAttribute = .forceRightToLeft
-            self.txtUserName.textAlignment = NSTextAlignment.right
-            self.txtPassword.textAlignment = NSTextAlignment.right
-            UtilityUserDefault().setUDObject(ObjectToSave: arrayLanguages[3] as AnyObject?, KeyToSave: "Language")
-        }
-        else
+        if let language :String =   UtilityUserDefault().getUDObject(KeyToReturnValye: "Language") as? String
         {
-            UtilityUserDefault().setUDObject(ObjectToSave: arrayLanguages[1] as AnyObject?, KeyToSave: "Language")
-            UIView.appearance().semanticContentAttribute = .forceLeftToRight
-            self.txtUserName.textAlignment = NSTextAlignment.left
-            self.txtPassword.textAlignment = NSTextAlignment.left
             
+            print("language is \(language)")
+            
+            
+            if language == "ar" {
+                
+                UIView.appearance().semanticContentAttribute = .forceRightToLeft
+                self.txtUserName.textAlignment = NSTextAlignment.right
+                self.txtPassword.textAlignment = NSTextAlignment.right
+                UtilityUserDefault().setUDObject(ObjectToSave: arrayLanguages[3] as AnyObject?, KeyToSave: "Language")
+            }
+            else
+            {
+                UtilityUserDefault().setUDObject(ObjectToSave: arrayLanguages[1] as AnyObject?, KeyToSave: "Language")
+                UIView.appearance().semanticContentAttribute = .forceLeftToRight
+                self.txtUserName.textAlignment = NSTextAlignment.left
+                self.txtPassword.textAlignment = NSTextAlignment.left
+                
+            }
         }
-        
     }
     
     @IBAction func btnLoginClicked(_ sender: Any) {
-                self.CallAPILogin()
+        
+//        self.CallAPILogin()
+        FWUtilityDrawer().loginToDrawerFrom(self, animated: false)
+
+        
         
     }
     @IBAction func btnLoginAsGuestClicked(_ sender: Any) {

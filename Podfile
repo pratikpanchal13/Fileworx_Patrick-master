@@ -13,7 +13,6 @@ target 'Fileworx_Patrick' do
     pod 'Toast-Swift', '~> 2.0.0'
     pod 'Material', '~> 2.0'
     pod 'MMDrawerController', '~> 0.5.7'
-    
 
     
     
