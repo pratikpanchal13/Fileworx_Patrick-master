@@ -22,7 +22,7 @@ class Localisator {
     // MARK: - Private properties
     
     fileprivate let userDefaults                    = UserDefaults.standard
-    fileprivate var availableLanguagesArray         = ["DeviceLanguage", "English_en", "French_fr","ar"]
+    fileprivate var availableLanguagesArray         = ["DeviceLanguage", "English_en", "French_fr","ar","hi","gu"]
     fileprivate var dicoLocalisation:NSDictionary!
     
     

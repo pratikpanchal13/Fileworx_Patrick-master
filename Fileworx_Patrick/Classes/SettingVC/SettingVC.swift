@@ -13,7 +13,7 @@ import PatrickDatePickers
 
 class SettingVC: UIViewController,UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate {
 
-    var mutArrayContent = ["Prefered Language","English","Arabic","Hindi"]
+    var mutArrayContent = ["Prefered Language","English","Arabic","Hindi","Gujarati"]
     let arrayLanguages = Localisator.sharedInstance.getArrayAvailableLanguages()    // 1) without Restart Method
     
     var datePicker = PKDatePickers.getFromNib()
@@ -71,7 +71,7 @@ class SettingVC: UIViewController,UITableViewDataSource,UITableViewDelegate,UITe
         let indexPath = NSIndexPath(row: textField.tag, section: 0)
         let cell = self.tblView.cellForRow(at: indexPath as IndexPath) as! CellSettings!
 
-       let pickerArray = ["English","Arbic","French","Hindi"]
+       let pickerArray = ["English","Arbic","French","Hindi","Gujarati"]
         
         switch textField.tag {
         case 0:
@@ -93,6 +93,14 @@ class SettingVC: UIViewController,UITableViewDataSource,UITableViewDelegate,UITe
                             case 2:
                                 break
                             case 3:
+                                UtilityUserDefault().setUDObject(ObjectToSave: self.arrayLanguages[4] as AnyObject?, KeyToSave: "Language")
+
+                                break
+                            case 4:
+                                UtilityUserDefault().setUDObject(ObjectToSave: self.arrayLanguages[5] as AnyObject?, KeyToSave: "Language")
+                                break
+                            case 5:
+
                                 break
                             default:
                                 break

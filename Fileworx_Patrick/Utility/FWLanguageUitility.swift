@@ -25,6 +25,18 @@ class FWLanguageUitily
                     UIView.appearance().semanticContentAttribute = .forceLeftToRight
                 }
             }
+            else if language == "hi" {
+                if SetLanguage(arrayLanguages[4]) {
+                    UtilityUserDefault().setUDObject(ObjectToSave: arrayLanguages[4] as AnyObject?, KeyToSave: "Language")
+                    UIView.appearance().semanticContentAttribute = .forceLeftToRight
+                }
+            }
+            else if language == "gu" {
+                if SetLanguage(arrayLanguages[5]) {
+                    UtilityUserDefault().setUDObject(ObjectToSave: arrayLanguages[5] as AnyObject?, KeyToSave: "Language")
+                    UIView.appearance().semanticContentAttribute = .forceLeftToRight
+                }
+            }
             else
             {
                 if SetLanguage(arrayLanguages[1]) {

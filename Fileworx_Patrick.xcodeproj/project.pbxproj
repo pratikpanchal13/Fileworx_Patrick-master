@@ -84,6 +84,8 @@
 		A97F06951E9BAA480029AF70 /* PickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
 		A97F06971E9BAA5B0029AF70 /* PickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PickerView.xib; sourceTree = "<group>"; };
 		A97F06991E9BAB5F0029AF70 /* FWUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FWUtility.swift; sourceTree = "<group>"; };
+		A97F06A11E9BC0860029AF70 /* hi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hi; path = hi.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A97F06A21E9BC0AB0029AF70 /* gu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = gu; path = gu.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A988A9E31E1CC57C009F4729 /* MessageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageVC.swift; sourceTree = "<group>"; };
 		A988A9E61E1CC59B009F4729 /* MediaVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaVC.swift; sourceTree = "<group>"; };
 		A988A9EA1E1CCBD3009F4729 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -540,6 +542,8 @@
 				en,
 				Base,
 				ar,
+				hi,
+				gu,
 			);
 			mainGroup = A9AC35C51E1B72F70053B560;
 			productRefGroup = A9AC35CF1E1B72F70053B560 /* Products */;
@@ -685,6 +689,8 @@
 				A99C719D1E3B2A4E005B8C38 /* Base */,
 				A99C719F1E3B2A52005B8C38 /* en */,
 				A99C71A01E3B2A65005B8C38 /* ar */,
+				A97F06A11E9BC0860029AF70 /* hi */,
+				A97F06A21E9BC0AB0029AF70 /* gu */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
