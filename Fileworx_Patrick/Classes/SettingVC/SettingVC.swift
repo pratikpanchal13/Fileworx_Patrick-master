@@ -7,22 +7,27 @@
 //
 
 import UIKit
+import PatrickDatePickers
 
-class SettingVC: UIViewController,UITableViewDataSource,UITableViewDelegate {
+
+
+class SettingVC: UIViewController,UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate {
 
     var mutArrayContent = ["Prefered Language","English","Arabic","Hindi"]
     let arrayLanguages = Localisator.sharedInstance.getArrayAvailableLanguages()    // 1) without Restart Method
+    
+    var datePicker = PKDatePickers.getFromNib()
+    var dateFormatter = DateFormatter()
 
+    
     @IBOutlet weak var tblView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         self.tblView.separatorStyle = .none
-        
-
     }
-   
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -45,53 +50,77 @@ class SettingVC: UIViewController,UITableViewDataSource,UITableViewDelegate {
         let cell : CellSettings = tableView.dequeueReusableCell(withIdentifier: "CellSettings", for: indexPath) as! CellSettings
         
         cell.lblTitle.text = mutArrayContent[indexPath.row]
-        cell.btnTitle.setTitle("\(mutArrayContent[indexPath.row])", for: UIControlState.normal)
-
-        cell.btnTitle.tag = indexPath.row
-        cell.btnTitle.addTarget(self,action:#selector(btnClicked(sender:)), for: .touchUpInside)
-
+        cell.txtName.text = mutArrayContent[indexPath.row]
+        cell.txtName.tag = indexPath.row
+        
         return cell
 
     }
     
-//    public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
-//    {
-//        return 90
-//    }
+    public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
+    {
+        return 90
+    }
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
     }
     
-    func btnClicked(sender:UIButton) {
-        let index = sender.tag
+    func textFieldDidBeginEditing(_ textField: UITextField) {    //delegate method
+        
+        let indexPath = NSIndexPath(row: textField.tag, section: 0)
+        let cell = self.tblView.cellForRow(at: indexPath as IndexPath) as! CellSettings!
 
-
-        switch index {
+       let pickerArray = ["English","Arbic","French","Hindi"]
+        
+        switch textField.tag {
         case 0:
-            print("English")
-            UtilityUserDefault().setUDObject(ObjectToSave: arrayLanguages[1] as AnyObject?, KeyToSave: "Language")
+                FWUtility.sharedInstance.addPicker(self, onTextField: (cell?.txtName)!, typePicker: "", pickerArray: pickerArray, setMaxDate:true) { (picker,buttonindex,firstindex) in
+                    
+                    if (picker != nil)
+                    {
+                        
+                        print("Index is \(firstindex)")
+                        switch firstindex{
+                            case 0:
+                                UtilityUserDefault().setUDObject(ObjectToSave: self.arrayLanguages[1] as AnyObject?, KeyToSave: "Language")
+                                
+                                break
+                            case 1:
+                                UtilityUserDefault().setUDObject(ObjectToSave: self.arrayLanguages[3] as AnyObject?, KeyToSave: "Language")
+                                break
+                                
+                            case 2:
+                                break
+                            case 3:
+                                break
+                            default:
+                                break
+                            }
+                        
+                        print("picker Data \(pickerArray[firstindex])")
+                        cell?.txtName.text = pickerArray[firstindex]
+                    }
+                    cell?.txtName!.resignFirstResponder()
+                }
+        
+        break;
 
-            break
         case 1:
-            print("English")
-            UtilityUserDefault().setUDObject(ObjectToSave: arrayLanguages[1] as AnyObject?, KeyToSave: "Language")
-
-            break
+            break;
+            
         case 2:
-            UtilityUserDefault().setUDObject(ObjectToSave: arrayLanguages[3] as AnyObject?, KeyToSave: "Language")
-
+            break;
             print("Arabic")
-            break
         case 3:
-            UtilityUserDefault().setUDObject(ObjectToSave: arrayLanguages[3] as AnyObject?, KeyToSave: "Language")
-
-            print("Index 4")
-            break
+            break;
         default:
             break
         }
+        
+     
     }
     
 }
+
 

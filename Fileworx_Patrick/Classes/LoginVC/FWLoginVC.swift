@@ -43,6 +43,24 @@ class FWLoginVC: UIViewController {
         
         self.navigationController?.isNavigationBarHidden = true
         
+//        let pickerArray = ["1","2","3","4","5"]
+//        
+//        FWUtility.sharedInstance.addPicker(self, onTextField: self.txtUserName, typePicker: "", pickerArray: pickerArray, setMaxDate:true) { (picker,buttonindex,firstindex) in
+//            
+//            if (picker != nil)
+//            {
+//                
+//                print("picker Data \(pickerArray[firstindex])")
+//                let datePicker = picker as! UIPickerView
+//                
+////                let strDate = Utility.sharedInstance.getStringFromDate(Constant.kDateFormat_DDMMYYYY, date: datePicker.date)
+//                
+////                self.txtUserName = strDate
+//                
+////                print(strDate)
+//            }
+//            self.txtUserName!.resignFirstResponder()
+//        }
         
     }
     
@@ -79,8 +97,9 @@ class FWLoginVC: UIViewController {
     
     @IBAction func btnLoginClicked(_ sender: Any) {
         
+        self.validationCheck()
 //        self.CallAPILogin()
-        FWUtilityDrawer().loginToDrawerFrom(self, animated: false)
+//        FWUtilityDrawer().loginToDrawerFrom(self, animated: false)
 
         
         
@@ -88,6 +107,31 @@ class FWLoginVC: UIViewController {
     @IBAction func btnLoginAsGuestClicked(_ sender: Any) {
     }
     
+    
+    func validationCheck(){
+        
+//        guard let userName  = self.txtUserName.text , userName != "", isValidEmail(testStr: userName)  else{
+//            print("Please Enter Name")
+//            return
+//        }
+//        
+//        guard let passwrod  = self.txtPassword.text , passwrod != "" else{
+//            print("Please Enter Password")
+//            return
+//        }
+        FWUtilityDrawer().loginToDrawerFrom(self, animated: false)
+
+        
+    
+    }
+    
+    func isValidEmail(testStr:String) -> Bool {
+        // print("validate calendar: \(testStr)")
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+        
+        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailTest.evaluate(with: testStr)
+    }
 }
 
 

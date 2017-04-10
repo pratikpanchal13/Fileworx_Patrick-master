@@ -31,7 +31,7 @@ class FWUtilityDrawer
         let rightNav = UINavigationController(rootViewController: rightViewController)
         
         centerContainer = MMDrawerController(center: centerNav, leftDrawerViewController: leftSideNav,rightDrawerViewController:rightNav)
-        //        centerContainer!.openDrawerGestureModeMask = MMOpenDrawerGestureMode.panningCenterView;
+                centerContainer!.openDrawerGestureModeMask = MMOpenDrawerGestureMode.panningCenterView;
         //        centerContainer!.closeDrawerGestureModeMask = MMCloseDrawerGestureMode.panningCenterView;
         
         

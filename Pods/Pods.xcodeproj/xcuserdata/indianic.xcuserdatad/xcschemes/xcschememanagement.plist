@@ -14,17 +14,27 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Material-io.cosmicmind.material.fonts.xcscheme</key>
+		<key>Material-com.cosmicmind.material.fonts.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Material-io.cosmicmind.material.icons.xcscheme</key>
+		<key>Material-com.cosmicmind.material.icons.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>Material.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>PatrickDatePickers-PatrickDatePickers.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>PatrickDatePickers.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -52,22 +62,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0CE3DAEEB04475D26F34CF7823440BE7</key>
+		<key>22D69799BCCD98E43C70BC9531BA6751</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>1D15C994A320432F07D9D9132809E04C</key>
+		<key>39AA3FC7447AC6B6A131668CFF9C01CD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>24085F438788A072884B3FA2E6E02D7C</key>
+		<key>3A5897FCD2621886E495618AB901B1EF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>367E317BC931D2CEAF6293407D2544D2</key>
+		<key>4CE5DA072B86C6189C9EC2348DDEB168</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -77,22 +87,32 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>8D511562A8961C5B7A5DD87BAE2374F2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>949EA3BC487D0BDA93D1776A73846CC6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A377F0F8363C2AE59371B1425B38CBD8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>A8FAB4675B15F8258B6C19B71077B859</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BA287C1DC287EAA4A399B22703554187</key>
+		<key>BF917FCB2764D1B5653F2978FAAE2038</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CB6CEBA7291686A57B2A6141E00DB9A3</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>F172B8277260B1DF30D38FB65EC976F4</key>
+		<key>F57A3DACCA19395C7EF0EB194B4FB665</key>
 		<dict>
 			<key>primary</key>
 			<true/>

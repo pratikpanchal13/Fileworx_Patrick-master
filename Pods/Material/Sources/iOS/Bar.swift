@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015 - 2016, Daniel Dahan and CosmicMind, Inc. <http://cosmicmind.com>.
+ * Copyright (C) 2015 - 2017, Daniel Dahan and CosmicMind, Inc. <http://cosmicmind.com>.
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -75,9 +75,12 @@ open class Bar: View {
     }
     
     /// A preset wrapper around interimSpace.
-    open var interimSpacePreset = InterimSpacePreset.none {
-        didSet {
-            interimSpace = InterimSpacePresetToValue(preset: interimSpacePreset)
+    open var interimSpacePreset: InterimSpacePreset {
+        get {
+            return grid.interimSpacePreset
+        }
+        set(value) {
+            grid.interimSpacePreset = value
         }
     }
     

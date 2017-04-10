@@ -1,7 +1,7 @@
 PODS:
-  - Material (2.4.9):
-    - Material/Core (= 2.4.9)
-  - Material/Core (2.4.9)
+  - Material (2.6.3):
+    - Material/Core (= 2.6.3)
+  - Material/Core (2.6.3)
   - MBProgressHUD (0.9.2)
   - MMDrawerController (0.5.7):
     - MMDrawerController/Core (= 0.5.7)
@@ -15,6 +15,7 @@ PODS:
     - MMDrawerController/Core
   - MMDrawerController/Subclass (0.5.7):
     - MMDrawerController/Core
+  - PatrickDatePickers (0.1.2)
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
@@ -25,28 +26,35 @@ DEPENDENCIES:
   - Material (~> 2.0)
   - MBProgressHUD (~> 0.9.2)
   - MMDrawerController (~> 0.5.7)
+  - PatrickDatePickers (from `https://github.com/pratikpanchal13/PatrickDatePickers.git`)
   - SDWebImage (~> 3.8)
   - SwiftyJSON (from `https://github.com/appsailor/SwiftyJSON.git`, branch `swift3`)
   - Toast-Swift (~> 2.0.0)
 
 EXTERNAL SOURCES:
+  PatrickDatePickers:
+    :git: https://github.com/pratikpanchal13/PatrickDatePickers.git
   SwiftyJSON:
     :branch: swift3
     :git: https://github.com/appsailor/SwiftyJSON.git
 
 CHECKOUT OPTIONS:
+  PatrickDatePickers:
+    :commit: 9f1a6646c34ec4cc418b7086bad3ade73ee25f94
+    :git: https://github.com/pratikpanchal13/PatrickDatePickers.git
   SwiftyJSON:
     :commit: de73429b38b8994f614fb27c5ec094bb8a4833f2
     :git: https://github.com/appsailor/SwiftyJSON.git
 
 SPEC CHECKSUMS:
-  Material: be1e671e4e42e459630facc1cb7178e3a0c43700
+  Material: af607a7ec0e9978ef85cf189a3d8ceeeb650400f
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
   MMDrawerController: 7a4cf8e25596bf2434e03ce50d22a8608ddee6a1
-  SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
+  PatrickDatePickers: ea930b881d395becf18a295ecb9d876a6004ff2e
+  SDWebImage: '098e97e6176540799c27e804c96653ee0833d13c'
   SwiftyJSON: f57b2b44bc166617372d1c70773591fe9f0f5fd4
   Toast-Swift: 5b2f8f720f7e78e48511f693df1f9c9a6e38a25a
 
-PODFILE CHECKSUM: 973cd1d30176c7d8f2d6797fa85f10d6723ded61
+PODFILE CHECKSUM: 4069882eb8e129bb90e1dee61cc5f67d3f21a3cc
 
 COCOAPODS: 1.2.0

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015 - 2016, Daniel Dahan and CosmicMind, Inc. <http://cosmicmind.com>.
+ * Copyright (C) 2015 - 2017, Daniel Dahan and CosmicMind, Inc. <http://cosmicmind.com>.
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -53,12 +53,17 @@ public protocol Pulseable {
     var pulseOpacity: CGFloat { get set }
 }
 
+internal protocol PulseableLayer {
+    /// A reference to the pulse layer.
+    var pulseLayer: CALayer? { get }
+}
+
 public struct Pulse {
     /// A UIView that is Pulseable.
     fileprivate weak var pulseView: UIView?
     
     /// The layer the pulse layers are added to.
-    fileprivate weak var pulseLayer: CALayer?
+    internal weak var pulseLayer: CALayer?
     
     /// Pulse layers.
     fileprivate var layers = [CAShapeLayer]()
@@ -86,7 +91,7 @@ public struct Pulse {
      Triggers the expanding animation.
      - Parameter point: A point to pulse from.
      */
-    public mutating func expandAnimation(point: CGPoint) {
+    public mutating func expand(point: CGPoint) {
         guard let view = pulseView else {
             return
         }
@@ -114,7 +119,7 @@ public struct Pulse {
         let w = view.bounds.width
         let h = view.bounds.height
         
-        Motion.disable(animations: { [
+        Motion.disable({ [
             n = .center == animation ? w < h ? w : h : w < h ? h : w,
             bounds = layer.bounds,
             animation = animation,
@@ -143,23 +148,23 @@ public struct Pulse {
         
         switch animation {
         case .centerWithBacking, .backing, .pointWithBacking:
-            bLayer.add(Motion.backgroundColor(color: color.withAlphaComponent(opacity / 2), duration: duration), forKey: nil)
+            bLayer.motion(.backgroundColor(color.withAlphaComponent(opacity / 2)), .duration(duration))
         default:break
         }
         
         switch animation {
         case .center, .centerWithBacking, .centerRadialBeyondBounds, .radialBeyondBounds, .point, .pointWithBacking:
-            pLayer.add(Motion.scale(by: 1, duration: duration), forKey: nil)
+            pLayer.motion(.scale(1), .duration(duration))
         default:break
         }
         
-        Motion.delay(time: duration) {
+        Motion.delay(duration) {
             bLayer.setValue(true, forKey: "animated")
         }
 	}
 	
 	/// Triggers the contracting animation.
-    public mutating func contractAnimation() {
+    public mutating func contract() {
         guard let bLayer = layers.popLast() else {
             return
         }
@@ -168,7 +173,7 @@ public struct Pulse {
             return
         }
         
-        Motion.delay(time: animated ? 0 : 0.15) { [animation = animation, color = color] in
+        Motion.delay(animated ? 0 : 0.15) { [animation = animation, color = color] in
             guard let pLayer = bLayer.sublayers?.first as? CAShapeLayer else {
                 return
             }
@@ -177,20 +182,17 @@ public struct Pulse {
             
             switch animation {
             case .centerWithBacking, .backing, .pointWithBacking:
-                bLayer.add(Motion.backgroundColor(color: color.withAlphaComponent(0), duration: duration), forKey: nil)
+                bLayer.motion(.backgroundColor(color.withAlphaComponent(0)), .duration(duration))
             default:break
             }
             
             switch animation {
             case .center, .centerWithBacking, .centerRadialBeyondBounds, .radialBeyondBounds, .point, .pointWithBacking:
-                pLayer.add(Motion.animate(group: [
-                    Motion.scale(by: .center == animation ? 1 : 1.325),
-                    Motion.backgroundColor(color: color.withAlphaComponent(0))
-                ], duration: duration), forKey: nil)
+                pLayer.motion(.scale(.center == animation ? 1 : 1.325), .backgroundColor(color.withAlphaComponent(0)))
             default:break
             }
             
-            Motion.delay(time: duration) {
+            Motion.delay(duration) {
                 pLayer.removeFromSuperlayer()
                 bLayer.removeFromSuperlayer()
             }

@@ -15,6 +15,7 @@ class CellSettings: UITableViewCell {
     
     @IBOutlet weak var btnTitle: UIButton!
     
+    @IBOutlet weak var txtName: UITextField!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '367E317BC931D2CEAF6293407D2544D2'
-               BlueprintName = 'Material-io.cosmicmind.material.icons'
+               BlueprintIdentifier = '949EA3BC487D0BDA93D1776A73846CC6'
+               BlueprintName = 'PatrickDatePickers'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'io.cosmicmind.material.icons.bundle'>
+               BuildableName = 'PatrickDatePickers.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

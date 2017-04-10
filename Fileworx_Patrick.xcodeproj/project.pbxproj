@@ -18,6 +18,9 @@
 		A933E8701E5FFE8F00B5D18F /* FWPaginationInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A933E86B1E5FFE8F00B5D18F /* FWPaginationInfo.swift */; };
 		A933E8741E600C6300B5D18F /* FWMessageListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A933E8731E600C6300B5D18F /* FWMessageListCell.swift */; };
 		A95607C61E1B818800BE25C7 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95607C51E1B818800BE25C7 /* HomeVC.swift */; };
+		A97F06961E9BAA480029AF70 /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97F06951E9BAA480029AF70 /* PickerView.swift */; };
+		A97F06981E9BAA5B0029AF70 /* PickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A97F06971E9BAA5B0029AF70 /* PickerView.xib */; };
+		A97F069A1E9BAB5F0029AF70 /* FWUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97F06991E9BAB5F0029AF70 /* FWUtility.swift */; };
 		A988A9E41E1CC57C009F4729 /* MessageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A988A9E31E1CC57C009F4729 /* MessageVC.swift */; };
 		A988A9E71E1CC59B009F4729 /* MediaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A988A9E61E1CC59B009F4729 /* MediaVC.swift */; };
 		A988A9EB1E1CCBD3009F4729 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A988A9EA1E1CCBD3009F4729 /* Constants.swift */; };
@@ -78,6 +81,9 @@
 		A933E86B1E5FFE8F00B5D18F /* FWPaginationInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FWPaginationInfo.swift; sourceTree = "<group>"; };
 		A933E8731E600C6300B5D18F /* FWMessageListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FWMessageListCell.swift; sourceTree = "<group>"; };
 		A95607C51E1B818800BE25C7 /* HomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		A97F06951E9BAA480029AF70 /* PickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
+		A97F06971E9BAA5B0029AF70 /* PickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PickerView.xib; sourceTree = "<group>"; };
+		A97F06991E9BAB5F0029AF70 /* FWUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FWUtility.swift; sourceTree = "<group>"; };
 		A988A9E31E1CC57C009F4729 /* MessageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageVC.swift; sourceTree = "<group>"; };
 		A988A9E61E1CC59B009F4729 /* MediaVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaVC.swift; sourceTree = "<group>"; };
 		A988A9EA1E1CCBD3009F4729 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -205,6 +211,15 @@
 			path = HomeVC;
 			sourceTree = "<group>";
 		};
+		A97F06901E9BA5790029AF70 /* PickerView */ = {
+			isa = PBXGroup;
+			children = (
+				A97F06951E9BAA480029AF70 /* PickerView.swift */,
+				A97F06971E9BAA5B0029AF70 /* PickerView.xib */,
+			);
+			path = PickerView;
+			sourceTree = "<group>";
+		};
 		A9837B6B1E1D04DE00CFB6B9 /* FWUserModule */ = {
 			isa = PBXGroup;
 			children = (
@@ -267,6 +282,7 @@
 				A90DBDD91E82876A00E532D0 /* FWUtilityDrawer.swift */,
 				A9EA85941E82B13500A0B0C0 /* FWUtilityAppDelegate.swift */,
 				A9E9B4731E83901F003A94CB /* FWUtilityNotification.swift */,
+				A97F06991E9BAB5F0029AF70 /* FWUtility.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -310,6 +326,7 @@
 		A9AC35E31E1B736C0053B560 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				A97F06901E9BA5790029AF70 /* PickerView */,
 				A9C903751E976C3700ADF2BB /* SettingVC */,
 				A90DBDD31E8285C700E532D0 /* SideMenuVC */,
 				A988A9E51E1CC591009F4729 /* MediaVC */,
@@ -547,6 +564,7 @@
 				A9AC361B1E1B79E50053B560 /* Roboto-MediumItalic.ttf in Resources */,
 				A9AC36171E1B79E50053B560 /* Roboto-Italic.ttf in Resources */,
 				A9AC36181E1B79E50053B560 /* Roboto-Light.ttf in Resources */,
+				A97F06981E9BAA5B0029AF70 /* PickerView.xib in Resources */,
 				A9AC35FD1E1B78100053B560 /* assests.xcassets in Resources */,
 				A9AC36161E1B79E50053B560 /* Roboto-BoldItalic.ttf in Resources */,
 				A9AC36141E1B79E50053B560 /* Roboto-BlackItalic.ttf in Resources */,
@@ -646,8 +664,10 @@
 				A933E8701E5FFE8F00B5D18F /* FWPaginationInfo.swift in Sources */,
 				A99C71B21E3B664C005B8C38 /* FWLanguageUitility.swift in Sources */,
 				A9924A061E38A30D0085924B /* FWUserData.swift in Sources */,
+				A97F06961E9BAA480029AF70 /* PickerView.swift in Sources */,
 				A9AC35FB1E1B75FB0053B560 /* FWSplashVC.swift in Sources */,
 				A99249FC1E38A2830085924B /* FWDataMobileSetting.swift in Sources */,
+				A97F069A1E9BAB5F0029AF70 /* FWUtility.swift in Sources */,
 				A988A9EB1E1CCBD3009F4729 /* Constants.swift in Sources */,
 				A99249FD1E38A2830085924B /* FWGlobalMobileSetttings.swift in Sources */,
 				A9C903791E97894100ADF2BB /* CellSettings.swift in Sources */,
